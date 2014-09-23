@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
+<body onload="init()">
 
 <h1>Hello Dave</h1>
 
@@ -9,30 +9,36 @@
 <script>
 function myFunction()
 {
-//var count = 0;
-
 var timeNow = new Date();
 var hours = timeNow.getHours();
 var minutes = timeNow.getMinutes();
 var seconds = timeNow.getSeconds();
+
 if (hours > 12) { hours = hours - 12; };
 if (minutes < 10) { minutes = "0" + minutes; };
 if (seconds < 10) { seconds = "0" + seconds; };
+
 var fullTime = hours + ":" + minutes + ":" + seconds;
+
+function alertColor() { alert(document.body.style.backgroundColor.toUpperCase() + " background @ " + fullTime);}
 
 if (document.body.style.backgroundColor=="red") {
    document.body.style.backgroundColor="blue";
-   alert(document.body.style.backgroundColor.toUpperCase() + " " + "background @ " + fullTime);
+   alertColor();
 } else if (document.body.style.backgroundColor=="blue") {
    document.body.style.backgroundColor="green";
-   alert(document.body.style.backgroundColor.toUpperCase() + " " + "background @ " + fullTime);
+   alertColor();
 } else {
    document.body.style.backgroundColor="red";
-   alert(document.body.style.backgroundColor.toUpperCase() + " " + "background @ " + fullTime);
-}
-//count++;
+   alertColor();
 }
 
+}
+
+//function alertColor() { alert(document.body.style.backgroundColor.toUpperCase() + " background @ " + fullTime);}
+
+function theDate()
+{
 var currentTime = new Date();
 var hours = currentTime.getHours();
 var minutes = currentTime.getMinutes();
@@ -49,7 +55,47 @@ var day = currentDate.getDate()
 var month = currentDate.getMonth() + 1
 var year = currentDate.getFullYear()
 document.write("<b>" + month + "/" + day + "/" + year + "</b>")
+}
+
+theDate();
 </script>
+
+<br><br><br>
+<h3>JS Calculator</h3>
+
+<script type="text/javascript">
+var plus, minus, divide, times
+
+function init() {
+   plus=document.calc.operator.options[0]
+   minus=document.calc.operator.options[1]
+   multiply=document.calc.operator.options[2]
+   divide=document.calc.operator.options[3]
+}
+
+function calculate() {
+   x=parseInt(document.calc.firstValue.value)
+   y=parseInt(document.calc.secondValue.value)
+
+   if (plus.selected) {document.calc.answer.value=x+y}
+   if (minus.selected) {document.calc.answer.value=x-y}
+   if (multiply.selected) {document.calc.answer.value=x*y}
+   if (divide.selected) {document.calc.answer.value=x/y}
+}
+</script>
+
+<form name="calc" action="post">
+<input type="text" name="firstValue" size="10">
+<select name="operator">
+   <option value="plus">+</option>
+   <option value="minus">-</option>
+   <option value="multiply">*</option>
+   <option value="divide">/</option>
+</select>
+<input type="text" name="secondValue" size="10"><input type="button" value="answer" onclick="calculate()"><br>
+__________________________
+<br><input type="text" name="answer" size="36">
+</form>
 
 </body>
 </html>
