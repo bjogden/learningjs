@@ -5,24 +5,21 @@ function wake_listeners() {
 
 // Get text
 function get_text() {
-	var check_value = document.getElementsByName('reverse')[0].value;
-
-	if (!check_value) {
-		return "!txet emos retnE";
-	} else {
-		var pre_reverse_text = check_value;
-		return(String(pre_reverse_text));
-	}
+	return document.getElementsByName('reverse')[0].value;
 };
 
 // Reverse text
 function reverse_text() {
-	var pre_reversed = get_text();
+	var input_text = get_text();
 	var reversed = "";
 
-	for (var text_length = pre_reversed.length ; text_length >= 0 ; text_length--) {
-		reversed += pre_reversed[text_length];
-	};
+    if (input_text) {
+	    for (var text_length = input_text.length-1 ; text_length >= 0 ; text_length--) {
+		    reversed += input_text[text_length];
+	    };
+    } else {
+        reversed += "Please enter some text.";
+    }
 
 	return(reversed);
 }
@@ -30,10 +27,7 @@ function reverse_text() {
 // Present reversed text
 function present_text() {
 	var result = reverse_text();
-
-	result = result.replace('undefined', '');
-
-	document.getElementsByName('reverse')[1].value = result;
+    document.getElementsByName('reverse')[1].value = result;
 }
 
 // Kick it off
