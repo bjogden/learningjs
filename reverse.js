@@ -1,16 +1,15 @@
 // Listen for click
 function wake_listeners() {
-	document.getElementById('reverse-btn').addEventListener('click', present_text);
+	document.getElementById('reverse-btn').addEventListener('click', reverse);
 };
 
 // Get text
 function get_text() {
-	return document.getElementsByName('reverse')[0].value;
+	return document.getElementById('reverse_input').value;
 };
 
 // Reverse text
-function reverse_text() {
-	var input_text = get_text();
+function reverse_text(input_text) {
 	var reversed = "";
 
     if (input_text) {
@@ -24,10 +23,16 @@ function reverse_text() {
 	return(reversed);
 }
 
-// Present reversed text
-function present_text() {
-	var result = reverse_text();
-    document.getElementsByName('reverse')[1].value = result;
+// Update text
+function update_results(result) {
+    document.getElementById('reversed').value = result;
+}
+
+// Callback for reversed function
+function reverse() {
+    var input_text = get_text();
+	var result = reverse_text(input_text);
+    update_results(result);
 }
 
 // Kick it off
