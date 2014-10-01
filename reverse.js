@@ -1,6 +1,6 @@
 // Listen for click
 function wake_listeners() {
-	document.getElementById('reverse-btn').addEventListener('click', all_together);
+	document.getElementById('reverse-btn').addEventListener('click', present_text);
 };
 
 // Get text
@@ -28,7 +28,7 @@ function reverse_text() {
 }
 
 // Present reversed text
-function all_together() {
+function present_text() {
 	var result = reverse_text();
 
 	result = result.replace('undefined', '');
