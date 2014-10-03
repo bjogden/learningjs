@@ -2,11 +2,19 @@
 <html>
 
 <head>
-</head>
 
+<style>
+div.pets {
+   position: absolute;
+   left: 550px;
+   top: 140px;
+}
+</style>
+
+</head>
 <body onload="init()">
 
-<h1>Hello Dave</h1>
+<h1>Hello</h1>
 
 <button id="bg-button" type="button">Set background color</button>
 
@@ -59,6 +67,22 @@ __________________________
 <input type="text" id="reversed" name="reverse" size="54" placeholder="...">
 
 <script src='reverse.js'></script>
+
+<br><br>
+<!-- new project -->
+
+<div class="pets">
+   <h3>Pet Age in Human Years</h3>
+   <input type="text" id="pet_input" name="reverse" size="11" placeholder="Enter pet age">
+   <select id="pet_dropdown">
+      <option value="dog">dog</option>
+      <option value="cat">cat</option>
+   </select>
+   <input type="button" id="pet-btn" value="->">
+   <input type="text" id="pet_age" name="reverse" size="20" placeholder="...">
+</div>
+
+<script src='pets.js'></script>
 
 </body>
 </html>
