@@ -4,6 +4,7 @@
 	}
 
 	div.pets {
+		width: 419px;
 	}
 
 	fieldset {
@@ -12,17 +13,37 @@
 		border-radius: 10px;
 		border: 5px solid #666;
 	}
+
+	fieldset input,
+	fieldset select {
+		font-size: 20px;
+		display: block;
+		margin: 1em 0 ;
+	}
+
 	fieldset h3 {
 		text-align: center;
 	}
-	fieldset input#pet_input {
-		width: 7.5em;
+	fieldset input#pet_input,
+	fieldset input#pet_age {
+		width: 98%;
+	}
+	fieldset select#pet_dropdown,
+	fieldset input#pet-btn {
+		width: 100%;
 	}
 
 	fieldset h3 {
 		font-family: 'Century Gothic', 'Arial', sans-serif;
 		font-style: none;
 		font-size: 1.5em;
+	}
+
+	footer {
+		position: absolute;
+		display: block;
+		left: calc(419px/4.25);
+		margin: 0.5em 0;
 	}
 }
 

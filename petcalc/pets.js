@@ -40,19 +40,16 @@ function check_dropdown() {
 // Convert dog's age
 function convert_dog() {
 	var dog_age = check_pet_input();
-	var age_diff;
+	var age_diff, result;
 
-	if (dog_age == 0) {
-		return 0;
-	} else if (dog_age == 1) {
-		return 12;
-	} else if (dog_age == 2) {
-		return 24;
+	if (dog_age >= 0 && dog_age <= 2) {
+		age_diff = 12*dog_age;
+		result = age_diff;
 	} else if (dog_age > 2) {
-		age_diff = dog_age - 2;
-		age_diff *= 4;
-		return (24 + age_diff);
+		age_diff = (4*(dog_age-2))+24;
+		result = age_diff;
 	}
+	return result;
 }
 
 // Convert cat's age
@@ -60,16 +57,15 @@ function convert_cat() {
 	var cat_age = check_pet_input();
 	var age_diff, result;
 
-	if (cat_age == 0) {
-		result = 0;
-	} else if (cat_age == 1) {
-		result = 15;
-	} else if (cat_age == 2) {
-		result = 24;
+	if (cat_age >= 0 && cat_age <= 1) {
+		age_diff = 15*cat_age;
+		result = age_diff;
+	} else if (cat_age > 1 && cat_age <= 2) {
+		age_diff = (9*(cat_age-1))+15;
+		result = age_diff;
 	} else if (cat_age > 2) {
-		age_diff = cat_age - 2;
-		age_diff *= 4;
-		result = (24 + age_diff);
+		age_diff = (4*(cat_age-2))+24;
+		result = age_diff;
 	}
 	return result;
 }
@@ -80,16 +76,25 @@ function convert_age() {
 	var pet_type = check_dropdown();
 	var result;
 
-	if (pet_age) {
-		if (pet_type == "dog") {
-			result = convert_dog();
+	if (pet_type && pet_age) {
+		if (pet_age) {
+			if (pet_type == "dog") {
+				result = convert_dog();
+			}
+			else if (pet_type == "cat") {
+				result = convert_cat();
+			}
+		} else {
+			result = "Enter positive integer";
 		}
-		else if (pet_type == "cat") {
-			result = convert_cat();
-		}
+	} else if (!pet_type && !pet_age) {
+		result = "Enter all info";
+	} else if (!pet_type) {
+		result = "Select pet";
 	} else {
-		result = "Enter positive integer";
+		result = "Enter pet age";
 	}
+
 	return result;
 }
 
