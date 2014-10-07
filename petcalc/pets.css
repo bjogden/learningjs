@@ -1,0 +1,38 @@
+@media all {
+	body {
+		background: #70db70;
+	}
+
+	div.pets {
+	}
+
+	fieldset {
+		display: inline-block;
+		background: #fff;
+		border-radius: 10px;
+		border: 5px solid #666;
+	}
+	fieldset h3 {
+		text-align: center;
+	}
+	fieldset input#pet_input {
+		width: 7.5em;
+	}
+
+	fieldset h3 {
+		font-family: 'Century Gothic', 'Arial', sans-serif;
+		font-style: none;
+		font-size: 1.5em;
+	}
+}
+
+/* iPhone 5S and older */ 
+@media all and (max-width: 640px) {
+	body {
+		max-width: 304px;
+	}
+	fieldset h3 {
+		margin: 0 0 0.5em 0;
+		font-size: 2.5em;
+	}
+}
