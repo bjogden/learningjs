@@ -2,6 +2,7 @@
 <html>
 <head>
 
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="pets.css">
 
 </head>
@@ -11,18 +12,20 @@
 <div class="pets">
 	<fieldset>
 		<h3>Pet Age in Human Years</h3>
+		<p></p>
 		<input type="number" id="pet_input" name="reverse" min="0" size="4" placeholder="Enter pet age">
 		<select id="pet_dropdown">
+			<option value="" disabled selected>Select your pet</option>
 			<option value="dog">dog</option>
 			<option value="cat">cat</option>
 		</select>
-		<input type="button" id="pet-btn" value="->">
+		<input type="button" id="pet-btn" value="Go!">
 		<input type="text" id="pet_age" name="reverse" size="20" placeholder="...">
 	</fieldset>
 </div>
 
 <script src='pets.js'></script>
 
-
+<footer>&copy; 2014 Bryce Ogden</footer>
 </body>
 </html>
