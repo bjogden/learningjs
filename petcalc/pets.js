@@ -1,25 +1,12 @@
 // Listen for click 
 function wake_listeners() {
 	document.getElementById('pet-btn').addEventListener('click', convert);
-	/*document.getElementById('pet_input').addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler);
-	function keyDownHandler(event : KeyboardEvent) : void {
-    if (event.keyCode == Keyboard.ENTER) {
-        alert("hi");
-    };
-}*/
 }
 
 // Get input
 function get_pet_input() {
 	return document.getElementById('pet_input').value;
 }
-
-/* Check for whole number
-may or may not be useful
-function is_int(x) {
-	return n % 1 === 0;
-}
-*/
 
 // Check if input is number
 function check_pet_input() {
